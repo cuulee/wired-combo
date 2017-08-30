@@ -10,6 +10,13 @@
         position: relative;
       }
 
+       :host(.disabled) {
+        opacity: 0.5 !important;
+        cursor: default;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0.02);
+      }
+
       #container {
         white-space: nowrap;
         position: relative;
@@ -88,12 +95,17 @@
         return {
           value: {
             type: Object,
-            observer: 'relayout'
+            observer: '_relayout'
           },
           selected: {
             type: String,
             observer: '_refreshSelection',
             notify: true
+          },
+          disabled: {
+            type: Boolean,
+            value: false,
+            observer: '_onDisableChange'
           }
         };
       }
@@ -109,7 +121,7 @@
         this.style.opacity = 0;
         Polymer.RenderStatus.beforeNextRender(this, () => {
           setTimeout(() => {
-            this.relayout();
+            this._relayout();
             this.style.opacity = 1;
           }, 100);
         });
@@ -151,7 +163,7 @@
         }
       }
 
-      relayout() {
+      _relayout() {
         if (!this._connected) {
           return;
         }
@@ -196,6 +208,15 @@
         this.set("selected", event.detail.value);
         const selectedEvent = new CustomEvent('selected', { bubbles: true, composed: true, checked: this.checked, detail: { selected: this.selected } });
         this.dispatchEvent(selectedEvent);
+      }
+
+      _onDisableChange() {
+        if (this.disabled) {
+          this._setCardShowing(false);
+          this.classList.add("disabled");
+        } else {
+          this.classList.remove("disabled");
+        }
       }
     }
 
