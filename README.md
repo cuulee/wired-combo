@@ -22,4 +22,8 @@ Combobox control - similar to a native browser select element; with a hand-drawn
   <wired-item value="three" text="Number three"></wired-item>
   <wired-item value="four" text="Number four"></wired-item>
 </wired-combo>
+<wired-combo selected="one" disabled>
+  <wired-item value="one" text="Number one"></wired-item>
+  <wired-item value="two" text="Number two"></wired-item>
+</wired-combo>
 ```
