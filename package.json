@@ -1,0 +1,31 @@
+{
+  "name": "wired-combo",
+  "version": "0.5.0",
+  "description": "Hand-drawn sketchy selector/combo-box web component",
+  "main": "wired-combo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wiredjs/wired-combo.git"
+  },
+  "keywords": [
+    "selector",
+    "combo",
+    "combobox",
+    "combo-box"
+  ],
+  "author": "Preet Shihn <preetshihn@gmail.com> (https://twitter.com/preetster)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wiredjs/wired-combo/issues"
+  },
+  "homepage": "https://github.com/wiredjs/wired-combo#readme",
+  "dependencies": {
+    "@polymer/lit-element": "^0.5.1",
+    "wired-card": "^0.5.0",
+    "wired-item": "^0.5.0",
+    "wired-lib": "^0.5.1"
+  }
+}
