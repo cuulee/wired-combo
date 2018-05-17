@@ -14,7 +14,17 @@
     "selector",
     "combo",
     "combobox",
-    "combo-box"
+    "combo-box",
+    "combo box",
+    "listbox",
+    "list box",
+    "webcomponent",
+    "web component",
+    "rough",
+    "sketchy",
+    "hand-drawn",
+    "hand drawn",
+    "wireframe"
   ],
   "author": "Preet Shihn <preetshihn@gmail.com> (https://twitter.com/preetster)",
   "license": "MIT",
